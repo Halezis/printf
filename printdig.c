@@ -9,42 +9,32 @@
 
 void print_dig(int num, int *count)
 {
-	int x, temp, digits, digit, divisor;
+	int div = 1, digit;
+	char number;
+	unsigned int n;
 
 	if (num < 0)
 	{
-		_putchar('-');
+		number = '-';
+		_putchar(number);
 		(*count)++;
-		num = -num;
+		n = -num;
 	}
-	else if (num == 0)
+	else
 	{
-		_putchar('0');
+		n = num;
+	}
+
+	while ((n / div) >= 10)
+		div *= 10;
+
+	while (div > 0)
+	{
+		digit = n / div;
+		number = digit + '0';
+		_putchar(number);
 		(*count)++;
-		return;
-	}
-
-	temp = num;
-	digits = 0;
-
-	while (temp != 0)
-	{
-		temp /= 10;
-		digits++;
-	}
-
-	divisor = 1;
-	for (x = 1; x < digits; x++)
-	{
-		divisor *= 10;
-	}
-
-	while (divisor != 0)
-	{
-		digit = num / divisor;
-		_putchar('0' + digit);
-		(*count)++;
-		num %= divisor;
-		divisor /= 10;
+		n %= div;
+		div /= 10;
 	}
 }
