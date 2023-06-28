@@ -41,7 +41,6 @@ int print_helper(char specifier, va_list print_arg)
 				break;
 			default:
 				return (-1);
-				break;
 			}
 	return (count);
 }
