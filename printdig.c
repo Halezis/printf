@@ -48,4 +48,3 @@ void print_dig(int num, int *count)
 		divisor /= 10;
 	}
 }
-

@@ -9,6 +9,7 @@
 int print_helper(char specifier, va_list print_arg)
 {
 	int arg;
+	char arg_c;
 	char *str;
 	int count;
 	unsigned int arg_b;
@@ -17,8 +18,8 @@ int print_helper(char specifier, va_list print_arg)
 	switch (specifier)
 			{
 			case 'c':
-				arg = va_arg(print_arg, int);
-				_putchar(arg);
+				arg_c = va_arg(print_arg, int);
+				_putchar(arg_c);
 				count++;
 				break;
 			case 's':
@@ -43,4 +44,3 @@ int print_helper(char specifier, va_list print_arg)
 			}
 	return (count);
 }
-
