@@ -14,8 +14,20 @@ int main(void)
     char *str = "Hhdhhggfgfjjj";
     int num = 123457;
     int num2 = 0;
+    int result1;
+    int result2;
     unsigned int ui;
     /*void *addr;*/
+
+	result1 = _printf("Invalid format specifier: %");
+	printf("Result: %d\n", result1);
+	result1 = _printf("Invalid format specifier: %");
+	printf("Result: %d\n", result1);
+
+	result2 = _printf("Invalid format specifier: % ");
+	printf("Result: %d\n", result2);
+	result2 = _printf("Invalid format specifier: % ");
+	printf("Result: %d\n", result2);
 
     len = _printf("");
     _printf("Length: %d\n", len);

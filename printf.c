@@ -24,6 +24,9 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
+			if (!format[x] || format[x] == ' ')
+			return (-1);
+
 			spec = format[x];
 			if (spec == 'c' || spec == 's' || spec == '%'
 				|| spec == 'i' || spec == 'd' || spec == 'b')
