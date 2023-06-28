@@ -8,13 +8,11 @@
 */
 int print_helper(char specifier, va_list print_arg)
 {
-	int arg;
+	int arg, count = 0;
 	char arg_c;
 	char *str;
-	int count;
 	unsigned int arg_b;
 
-	count = 0;
 	switch (specifier)
 			{
 			case 'c':
@@ -40,6 +38,9 @@ int print_helper(char specifier, va_list print_arg)
 			case 'b':
 				arg_b = va_arg(print_arg, unsigned int);
 				print_binary(arg_b, &count);
+				break;
+			default:
+				return (-1);
 				break;
 			}
 	return (count);
